@@ -4,12 +4,17 @@
 2.Button - done
 3.Badge - done
 4.Input - done
-5.Dropdown
+5.DropdownProfile
 6.Avatar - done
 
 // Layout
 5.Navbar
 6.Footer
 7.Sidebar
+
+// setup
+1.tailwind - done
+2.storybook - done
+3.axios - without testing as api token unauthorized
 
 
