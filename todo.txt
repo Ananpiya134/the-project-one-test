@@ -1,8 +1,8 @@
 // Components
 
-1.Typography 
-2.Badge
-3.Button
+1.Typography - done
+2.Button - done
+3.Badge
 4.Input
 5.Dropdown
 

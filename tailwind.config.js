@@ -24,6 +24,7 @@ export default {
         2.5: "0.625rem", // 10px
         3.75: "0.938rem", // 15px
         5: "1.25rem", // 20px
+        6: "1.5rem", // 24px
       },
       borderWidth: {
         Default: "1px",
@@ -32,6 +33,28 @@ export default {
         2: "2px",
         3: "3px",
         4: "4px",
+      },
+      colors: {
+        black: {
+          100: "#EEEEEE", // button-fill
+          200: "#E0E0E0", // border
+          500: "#9E9E9E", // icon
+          700: "#757575", // text-secondary, text-placeholder
+          900: "#212121", // text-primary
+        },
+        cream: "#FFFCFA", // text-on-fill
+        critical: "#B71C1C",
+        info: "#0277BD",
+        magic: "#4527A0",
+        warning: {
+          100: "#FFF3E0", // surface
+          300: "#FFE0B2", // border
+          500: "#F9A825", // fill-caution
+          700: "#F57F17", // icon-caution
+          800: "#EF6C00", // fill
+          900: "#E65100", // text
+        },
+        primary: "#A67E59",
       },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
