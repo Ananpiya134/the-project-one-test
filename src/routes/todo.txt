@@ -1,0 +1,14 @@
+# Routes
+
+1. /profile
+  - /profile/notification
+  - /profile/chat
+  - /profile/favourite
+2. /browse
+3. /room-finding
+4. /articles
+5. /tools
+6. /about
+7. /contact-us
+8. /post-your-properties
+9.
