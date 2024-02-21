@@ -4,52 +4,22 @@ import IconLogo from "@assets/icons/icon-logo-primary.svg";
 import IconMessage from "@assets/icons/icon-message.svg";
 
 import { Container } from "@components/container";
-// import { DropdownProfile} from '@components/dropdown-profile'
+import { DropdownProfile } from "@components/dropdown-profile";
 import { Typography } from "@components/typography";
 
 import { cn } from "@/utils/cn";
 
 import type { NavbarProps } from "./types";
 
-type SingleOption = {
-  path: string;
-  label: string;
-  isHightlight?: boolean;
-};
-
-const optionList: SingleOption[] = [
-  {
-    path: "/browse",
-    label: "Browse",
-  },
-  {
-    path: "/room-finding",
-    label: "Room Finding",
-  },
-  {
-    path: "/article",
-    label: "Article",
-  },
-  {
-    path: "/tools",
-    label: "Tools",
-  },
-  {
-    path: "/about",
-    label: "About",
-  },
-  {
-    path: "/contact-us",
-    label: "Contact Us",
-  },
-  {
-    path: "/post-your-property",
-    label: "Post Your Property",
-    isHightlight: true,
-  },
-];
-
-const Navbar = ({ className = "", ...props }: NavbarProps) => {
+const Navbar = ({
+  altText = "",
+  className = "",
+  fallBackText = "",
+  linkLabels = [],
+  options = [],
+  src = "",
+  ...props
+}: NavbarProps) => {
   return (
     <nav
       {...props}
@@ -66,12 +36,13 @@ const Navbar = ({ className = "", ...props }: NavbarProps) => {
 
           <div>
             <ul className="flex">
-              {optionList.map(({ isHightlight, label, path }) => {
+              {linkLabels.map(({ isHightlight, label, path }) => {
                 return (
                   <li
                     className={cn("px-4 py-2", {
                       "rounded-6 border border-critical": isHightlight,
                     })}
+                    key={label}
                   >
                     <a href={path}>
                       <Typography
@@ -106,6 +77,13 @@ const Navbar = ({ className = "", ...props }: NavbarProps) => {
                 </a>
               </li>
             </ul>
+
+            <DropdownProfile
+              altText={altText}
+              fallBackText={fallBackText}
+              options={options}
+              src={src}
+            />
           </div>
         </div>
       </Container>
