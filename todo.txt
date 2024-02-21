@@ -1,6 +1,6 @@
 // Components
 
-1.Typography
+1.Typography 
 2.Badge
 3.Button
 4.Input

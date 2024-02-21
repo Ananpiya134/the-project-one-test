@@ -10,6 +10,8 @@
  * Link: https://tailwindremconverter.netlify.app/
  */
 
+import defaultTheme from "tailwindcss/defaultTheme";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}", "./index.html"],
@@ -30,6 +32,26 @@ export default {
         2: "2px",
         3: "3px",
         4: "4px",
+      },
+      fontFamily: {
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+      },
+      fontSize: {
+        xxxl: "2rem", // 32px
+        xxl: "1.75rem", // 28px
+        xl: "1.5rem", // 24px
+        l: "1.25rem", // 20px
+        s: "0.875rem", //14px
+        xs: "0.75rem", // 12px
+      },
+      lineHeight: {
+        4.5: "1.125rem", // 18px
+        5: "1.25rem", // 20px
+        6: "1.5rem", // 24px
+        7.5: "1.875rem", // 30px
+        9: "2.25rem", // 36px
+        10.5: "2.625rem", // 42px
+        12: "3rem", // 48px
       },
       spacing: {
         0.75: "0.188rem", // 3px
@@ -52,5 +74,4 @@ export default {
     },
   },
   plugins: [],
-}
-
+};
