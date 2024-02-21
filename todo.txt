@@ -5,6 +5,7 @@
 3.Badge - done
 4.Input - done
 5.Dropdown
+6.Avatar - done
 
 // Layout
 5.Navbar
