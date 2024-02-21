@@ -2,8 +2,8 @@
 
 1.Typography - done
 2.Button - done
-3.Badge
-4.Input
+3.Badge - done
+4.Input - done
 5.Dropdown
 
 // Layout
