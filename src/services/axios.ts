@@ -1,7 +1,8 @@
 import Axios from "axios";
 import { API_BASE_URL } from "@/configs/constants";
 
-const debug = true;
+// const debug = true;
+const debug = false;
 const axios = Axios.create({
   baseURL: API_BASE_URL,
   headers: {
@@ -14,7 +15,7 @@ const axios = Axios.create({
 axios.interceptors.request.use(
   async (config) => {
     const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYsImlhdCI6MTcwNTEzMTU5MSwiZXhwIjoxNzA3NzIzNTkxfQ.-BlhldWm2NtVas28Yq-A4KqZxQyD6zuGCFeBAR2tYLw";
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjIsImlhdCI6MTcwODU4NjQ3MiwiZXhwIjoxNzExMTc4NDcyfQ.QdUjkx8leaMjdRoAds6pnxYdd08SeF6Yk9MU0796kJM";
     // eslint-disable-next-line no-param-reassign
     config.headers.Authorization = `Bearer ${token}`;
 

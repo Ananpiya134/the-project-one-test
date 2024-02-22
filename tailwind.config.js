@@ -37,6 +37,7 @@ export default {
       },
       colors: {
         black: {
+          50: "#F5F5F5",
           100: "#EEEEEE", // button-fill
           200: "#E0E0E0", // border
           500: "#9E9E9E", // icon
@@ -56,6 +57,11 @@ export default {
           900: "#E65100", // text
         },
         primary: "#A67E59",
+        success: {
+          100: "#F1F8E9", // fill
+          200: "#C8E6C9", // border
+          900: "#33691E", // text
+        },
       },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
@@ -78,10 +84,12 @@ export default {
         12: "3rem", // 48px
       },
       spacing: {
+        0.5: "0.125rem", // 2px
         0.75: "0.188rem", // 3px
         1.875: "0.469rem", // 7.5
         3.375: "0.844rem", // 13.5
         4.25: "1.063rem", // 17px
+        4.5: "1.125rem", // 18px
         5: "1.25rem", // 20px
         5.5: "1.375rem", // 22px
         6.25: "1.563rem", // 25px
@@ -99,6 +107,7 @@ export default {
         28: "7rem", // 112px
         30.5: "7.625rem", // 122px
         33: "8.25rem", // 132px
+        50: "12.5rem", // 200px
         66: "16.5rem", // 264px
         75: "18.75rem", // 300px
         111.5: "27.875rem", // 446px

@@ -13,7 +13,7 @@ export const getButtonClassName = (className: string, variant: Variant) => {
       "bg-primary": isPrimary,
       "bg-black-100 text-black-900 ": isSecondary,
       "bg-white border-critical border-black-200": isCritical,
-      "bg-warning-100": isWarning,
+      "bg-warning-100 border border-warning-900": isWarning,
     },
     className
   );

@@ -20,7 +20,7 @@ const Typography = ({
     <Component
       {...props}
       className={cn(
-        "tracking-default",
+        "tracking-default text-black-900",
         {
           // heading
           "text-xxxl font-bold leading-12": variant === "heading-l",

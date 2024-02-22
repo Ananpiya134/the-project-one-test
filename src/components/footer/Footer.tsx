@@ -53,7 +53,7 @@ const Footer = ({
             />
             {linkLabelsBottom.map(({ label, path }) => {
               return (
-                <a href={path} key={label}>
+                <a href={path} key={`label-bottom-${label}`}>
                   <Typography className="text-cream" variant="label-s">
                     {label}
                   </Typography>
@@ -78,7 +78,7 @@ const Footer = ({
             <div className="flex items-center gap-4">
               {linkIconList.map(({ alt, icon, href }) => {
                 return (
-                  <a href={href} key={`alt-href`}>
+                  <a href={href} key={`alt-href-${alt}`}>
                     <img alt={alt} src={icon} />
                   </a>
                 );
