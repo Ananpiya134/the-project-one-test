@@ -24,6 +24,7 @@ export default {
         2.5: "0.625rem", // 10px
         3: "0.75rem", // 12px
         3.75: "0.938rem", // 15px
+        4: "1rem", // 16px
         5: "1.25rem", // 20px
         6: "1.5rem", // 24px
       },

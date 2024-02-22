@@ -43,7 +43,7 @@ const useUserStore = create<UserStore>()(
       fetchUser: () => {
         const getUser = async () => {
           const response = await axios.get(`${API_BASE_URL}/users/me`);
-          console.log(response.data);
+
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           set((prev: UserStore) => ({
             ...prev,

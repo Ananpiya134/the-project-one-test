@@ -8,7 +8,10 @@ import IconVerifyOutlined from "@assets/icons/icon-verify-outlined.svg";
 
 import { Badge } from "@components/badge";
 import { Button } from "@components/button";
+import { PreviewCoverImage } from "@/components/preview-cover-image";
 import { Typography } from "@components/typography";
+
+import { COVER_IMAGE_URL } from "@/configs/constants";
 
 import { useUserStore } from "@/stores/user";
 
@@ -17,8 +20,7 @@ import { cn } from "@utils/cn";
 const PageAccount = () => {
   const { user } = useUserStore((state) => state);
 
-  console.log("Account");
-  console.log(user);
+  const coverImgSrc = COVER_IMAGE_URL;
 
   // user.isVerifyEmail = true;
   return (
@@ -38,7 +40,7 @@ const PageAccount = () => {
         <div className="flex items-center gap-6 py-4">
           <img
             alt="icon-cover"
-            className="w-4.5 h-4.5 text-black-700"
+            className="h-4.5 w-4.5 text-black-700"
             src={IconPicture}
           />
           <span>
@@ -50,7 +52,7 @@ const PageAccount = () => {
             </Typography>
           </span>
         </div>
-        <div className="h-50 w-255 bg-black-500" />
+        <PreviewCoverImage src={coverImgSrc} />
       </div>
       <div className="mb-8 flex items-center justify-between border-b border-black-200 py-4">
         <div className="flex items-center gap-6 ">
@@ -94,10 +96,10 @@ const PageAccount = () => {
                   {!user.isVerifyEmail ? "Add an email address" : user.email}
                 </Typography>
                 {user.isVerifyEmail && (
-                  <Badge className="bg-success-100 border-success-200 flex items-center gap-0.5 border px-2 py-0.5">
+                  <Badge className="flex items-center gap-0.5 border border-success-200 bg-success-100 px-2 py-0.5">
                     <img
                       alt="icon-verify-outlined"
-                      className="text-success-200 h-3 w-3"
+                      className="h-3 w-3 text-success-200"
                       src={IconVerifyOutlined}
                     />
                     <Typography className="text-success-900" variant="label-xs">
@@ -140,10 +142,10 @@ const PageAccount = () => {
                     : user.email}
                 </Typography>
                 {user.isVerifyThaiNationalId && (
-                  <Badge className="bg-success-100 border-success-200 flex items-center gap-0.5 border px-2 py-0.5">
+                  <Badge className="flex items-center gap-0.5 border border-success-200 bg-success-100 px-2 py-0.5">
                     <img
                       alt="icon-verify-outlined"
-                      className="text-success-200 h-3 w-3"
+                      className="h-3 w-3 text-success-200"
                       src={IconVerifyOutlined}
                     />
                     <Typography className="text-success-900" variant="label-xs">

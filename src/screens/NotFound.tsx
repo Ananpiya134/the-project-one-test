@@ -6,7 +6,7 @@ import { Typography } from "@/components/typography";
 const PageNotFound = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex h-[70%] flex-col items-center justify-center pb-52 pt-36">
+    <div className="flex w-255 flex-col items-center justify-center pb-52 pt-36">
       <Typography className="mb-3 text-primary" variant="heading-l">
         Not Found
       </Typography>

@@ -12,9 +12,9 @@ const RouteConfig = () => {
       <Route element={<LayoutMain />}>
         <Route element={<LayoutProfile />}>
           <Route path="/profile/account" element={<PageAccount />} />
+          <Route path="/not-found" element={<PageNotFound />} />
+          <Route path="*" element={<Navigate to="/not-found" />} />
         </Route>
-        <Route path="/not-found" element={<PageNotFound />} />
-        <Route path="*" element={<Navigate to="/not-found" />} />
       </Route>
     </Routes>
   );
