@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import IconCard from "@assets/icons/icon-card.svg";
 import IconCaution from "@assets/icons/icon-caution.svg";
 import IconLock from "@assets/icons/icon-lock.svg";
@@ -8,21 +10,50 @@ import IconVerifyOutlined from "@assets/icons/icon-verify-outlined.svg";
 
 import { Badge } from "@components/badge";
 import { Button } from "@components/button";
+import { Dialog } from "@components/dialog";
 import { PreviewCoverImage } from "@/components/preview-cover-image";
 import { Typography } from "@components/typography";
 
 import { COVER_IMAGE_URL } from "@/configs/constants";
 
+import axios from "@services/axios";
+
 import { useUserStore } from "@/stores/user";
 
 import { cn } from "@utils/cn";
 
+import type { FormValue } from "@/components/dialog";
+
 const PageAccount = () => {
-  const { user } = useUserStore((state) => state);
+  const { user, setNationalIdCard } = useUserStore((state) => state);
+  const [isFormSubmit, setIsFormSubmit] = useState<boolean>(false);
 
   const coverImgSrc = COVER_IMAGE_URL;
 
-  // user.isVerifyEmail = true;
+  const handleSubmitNationalIdCardForm = async ({
+    thaiNationalIdCardImage,
+    thaiNationalIdCardNo,
+  }: FormValue) => {
+    const formData = new FormData();
+    formData.append("thaiNationalIdNumber", thaiNationalIdCardNo);
+    formData.append("thaiNationalIdCardNo", thaiNationalIdCardImage);
+
+    const response = await axios.put("/users/me", formData);
+
+    // mock assume that PUT success
+    if (response.status === 200) {
+      const { thaiNationalIdCardPhoto, thaiNationalIdNumber } = response.data;
+      setNationalIdCard({
+        thaiNationalIdCardPhoto: thaiNationalIdCardPhoto,
+        thaiNationalIdNumber: thaiNationalIdNumber,
+      });
+      setIsFormSubmit(true);
+    }
+  };
+
+  useEffect(() => {
+    console.log(user);
+  }, [user.isVerifyThaiNationalId]);
   return (
     <div className="h-243 w-255 bg-white">
       <div className="mb-8">
@@ -156,18 +187,23 @@ const PageAccount = () => {
               </div>
             </span>
           </div>
-          <Button
-            variant={!user.isVerifyThaiNationalId ? "warning" : "secondary"}
+          <Dialog
+            isFormSubmit={isFormSubmit}
+            handleSubmitNationalIdCardForm={handleSubmitNationalIdCardForm}
           >
-            <Typography
-              className={cn("text-black-900", {
-                "text-warning-900": !user.isVerifyThaiNationalId,
-              })}
-              variant="label-s"
+            <Button
+              variant={!user.isVerifyThaiNationalId ? "warning" : "secondary"}
             >
-              {!user.isVerifyThaiNationalId ? "Verify Now" : "Change"}
-            </Typography>
-          </Button>
+              <Typography
+                className={cn("text-black-900", {
+                  "text-warning-900": !user.isVerifyThaiNationalId,
+                })}
+                variant="label-s"
+              >
+                {!user.isVerifyThaiNationalId ? "Verify Now" : "Change"}
+              </Typography>
+            </Button>
+          </Dialog>
         </div>
         <div className="mb-8">
           <Typography className="mb-2 text-black-900" variant="heading-xs">

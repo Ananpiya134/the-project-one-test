@@ -43,6 +43,7 @@ const useUserStore = create<UserStore>()(
       fetchUser: () => {
         const getUser = async () => {
           const response = await axios.get(`${API_BASE_URL}/users/me`);
+          console.log(response);
 
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           set((prev: UserStore) => ({
@@ -55,6 +56,17 @@ const useUserStore = create<UserStore>()(
         };
 
         getUser();
+      },
+
+      setNationalIdCard: (value) => {
+        set((prev) => ({
+          ...prev,
+          user: {
+            ...prev.user,
+            ...value,
+            isVerifyThaiNationalId: true,
+          },
+        }));
       },
     }),
     {

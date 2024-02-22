@@ -6,6 +6,10 @@ export interface UserState {
 
 export interface UserAction {
   fetchUser: () => void;
+  setNationalIdCard: (value: {
+    thaiNationalIdNumber: string;
+    thaiNationalIdCardPhoto: string;
+  }) => void;
 }
 
 export type UserStore = UserState & UserAction;
