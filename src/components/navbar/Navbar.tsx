@@ -26,7 +26,7 @@ const Navbar = ({
       className={cn("border-b border-black-200 bg-white py-4", className)}
     >
       <Container>
-        <div className="gap-20.75 flex items-center justify-between">
+        <div className="flex items-center justify-between gap-20.75 px-10">
           <a href="https://flowbite.com/" className="flex items-center gap-2.5">
             <img src={IconLogo} className="h-8 w-8" alt="Flowbite Logo" />
             <Typography className="text-primary" variant="heading-l">
