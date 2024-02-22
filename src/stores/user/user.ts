@@ -35,7 +35,7 @@ const useUserStore = create<UserStore>()(
         whatsAppId: undefined,
         weChatId: undefined,
         status: undefined,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
         userTypes: undefined,
         privacyPolicies: undefined,
         language: undefined,
@@ -43,9 +43,7 @@ const useUserStore = create<UserStore>()(
       fetchUser: () => {
         const getUser = async () => {
           const response = await axios.get(`${API_BASE_URL}/users/me`);
-          console.log(response);
 
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           set((prev: UserStore) => ({
             ...prev,
             user: {

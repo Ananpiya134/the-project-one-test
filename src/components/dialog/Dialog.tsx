@@ -1,7 +1,7 @@
 import * as RadixDialog from "@radix-ui/react-dialog";
 import * as Form from "@radix-ui/react-form";
 
-import { useMemo, useEffect } from "react";
+import { useMemo } from "react";
 import Dropzone from "react-dropzone";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -45,24 +45,13 @@ const Dialog = ({
     formState: { errors },
     handleSubmit,
     setValue,
-    watch,
   } = useForm<FormValue>({
     resolver: yupResolver(validationSchema),
   });
 
   const onDrop = (file: File[]) => {
-    console.log(typeof URL.createObjectURL(file[0]));
     setValue("thaiNationalIdCardImage", URL.createObjectURL(file[0]));
   };
-
-  const watchAllField = watch();
-  useEffect(() => {
-    console.log(watchAllField.thaiNationalIdCardImage);
-  }, [watchAllField.thaiNationalIdCardImage]);
-
-  useEffect(() => {
-    console.log(errors.thaiNationalIdCardImage?.message);
-  }, [errors.thaiNationalIdCardImage?.message]);
 
   return (
     <RadixDialog.Root {...props}>

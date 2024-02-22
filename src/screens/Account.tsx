@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import IconCard from "@assets/icons/icon-card.svg";
 import IconCaution from "@assets/icons/icon-caution.svg";
@@ -51,9 +51,6 @@ const PageAccount = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(user);
-  }, [user.isVerifyThaiNationalId]);
   return (
     <div className="h-243 w-255 bg-white">
       <div className="mb-8">
