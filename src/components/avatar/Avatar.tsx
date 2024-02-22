@@ -16,7 +16,7 @@ const Avatar = ({
     <RadixAvatar.Root
       {...props}
       className={cn(
-        "inline-flex h-10 w-10 select-none items-center justify-center overflow-hidden rounded-full align-middle",
+        "inline-flex h-10 w-10 select-none items-center justify-center overflow-hidden rounded-full  align-middle",
         className
       )}
     >
@@ -25,7 +25,7 @@ const Avatar = ({
         className="h-full w-full rounded-[inherit] object-cover"
         src={src}
       />
-      <RadixAvatar.Fallback className="flex h-full w-full items-center justify-center bg-white">
+      <RadixAvatar.Fallback className="flex h-full w-full items-center justify-center bg-black-200">
         <Typography className="text-primary" variant="label-s">
           {fallBackText}
         </Typography>

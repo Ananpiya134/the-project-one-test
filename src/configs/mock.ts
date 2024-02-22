@@ -1,11 +1,53 @@
+import IconBell from "@assets/icons/icon-bell.svg";
 import IconFacebook from "@assets/icons/icon-facebook.svg";
+import IconHeart from "@assets/icons/icon-heart.svg";
 import IconLine from "@assets/icons/icon-line.svg";
+import IconMessage from "@assets/icons/icon-message.svg";
+import IconPersonOutlined from "@assets/icons/icon-person-outlined.svg";
 import IconTiktok from "@assets/icons/icon-tiktok.svg";
 import IconYoutube from "@assets/icons/icon-youtube.svg";
 
 import type { DropdownProfileProps } from "@/components/dropdown-profile";
 import type { FooterProps, LinkIcon } from "@components/footer";
 import type { NavbarProps } from "@/components/navbar";
+import type { SidebarProps } from "@/components/sidebar";
+
+export const sidebarButtonLinkList: SidebarProps["buttonLinkList"] = [
+  {
+    altText: "icon-person-outlined-sidebar",
+    icon: IconPersonOutlined,
+    width: 4,
+    height: 4,
+    label: "Account",
+    path: "/profile/account",
+  },
+  {
+    alert: 5,
+    altText: "icon-notification-sidebar",
+    icon: IconBell,
+    width: 3.75,
+    height: 4,
+    label: "Notification",
+    path: "/profile/notification",
+  },
+  {
+    alert: 12,
+    altText: "icon-message-sidebar",
+    icon: IconMessage,
+    width: 4,
+    height: 3.75,
+    label: "Chat",
+    path: "/profile/chat",
+  },
+  {
+    altText: "icon-favourite-sidebar",
+    icon: IconHeart,
+    width: 3.75,
+    height: 3.25,
+    label: "Favourite",
+    path: "/profile/favourite",
+  },
+];
 
 export const optionsProfileDropdown: DropdownProfileProps["options"] = [
   "option-1",
