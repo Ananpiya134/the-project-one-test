@@ -20,7 +20,7 @@ const Footer = ({
     <footer {...props} className={cn("bg-primary", className)}>
       {/* site map */}
       <Container>
-        <div className="mb-8 flex justify-center px-10 pt-12">
+        <div className="mb-8 flex justify-center  pt-12">
           {linkSiteMapList.map(({ title, links }) => {
             return (
               <div className="w-66" key={`sitemap-${title}`}>
@@ -44,7 +44,7 @@ const Footer = ({
 
       {/* social */}
       <Container>
-        <div className="flex items-center justify-between px-10 py-8">
+        <div className="flex items-center justify-between  py-8">
           <div className="flex items-center gap-6">
             <img
               alt="logo-footer-secondary"
